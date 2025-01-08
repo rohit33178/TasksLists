@@ -18,11 +18,12 @@ export default function App() {
 
   return (
     <div>
-      <h1>Hello StackBlitz!</h1>
+      <h1>Project Management Tools</h1>
       <form>
         <input
           type="text"
           placeholder="Enter words"
+          style={{ fontSize: '1rem' }}
           value={word}
           onChange={(e) => setWord((preword) => (preword = e.target.value))}
         />
@@ -31,22 +32,21 @@ export default function App() {
         </button>
       </form>
       <hr />
-      <ul>
+      <div>
         {lists?.map((item) => (
-          <div style={{ display: 'flex', alignItems: "5px" }} key={item.id}>
-            <li style={{ listStyle: 'none' }} >
+          <div style={{ display: 'flex'}} key={item.id}>
+            <span style={{ fontSize: '1.5rem' }} >
               {item.word}
-            </li>
-            <button
-
-              style={{ marginLeft: '5px', background: "#000", color: "#fff", borderRadius: "50px", border: "0px", cursor: "pointer" }}
+            </span>
+            <span
+              style={{ cursor: "pointer", marginLeft: '10px', color: '#f00', fontSize: '1.5rem' }}
               onClick={() => handleDelete(item.id)}
             >
               x
-            </button>
+            </span>
           </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
